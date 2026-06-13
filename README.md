@@ -15,7 +15,9 @@
 ![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-555)
 [![Stars](https://img.shields.io/github/stars/furkanalp41/toktop?style=social)](https://github.com/furkanalp41/toktop/stargazers)
 
-<sub>📟 Live preview below — or run <code>toktop --demo</code> to watch the dollars tick and the budget bar go red in your own terminal.</sub>
+<img src="docs/demo.gif" alt="toktop live demo — dollars ticking up, the budget bar going from green to red" width="880">
+
+<sub>Recorded with <code>toktop --demo</code> (a low <code>$2</code> cap so the bar goes red on camera). Run it yourself to watch your real spend.</sub>
 
 </div>
 
