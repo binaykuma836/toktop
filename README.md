@@ -15,9 +15,7 @@
 ![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-555)
 [![Stars](https://img.shields.io/github/stars/furkanalp41/toktop?style=social)](https://github.com/furkanalp41/toktop/stargazers)
 
-<img src="docs/demo.gif" alt="toktop live demo — dollars ticking up, the budget bar going red" width="820">
-
-<sub>Don't have the GIF yet? Run <code>toktop --demo</code> and you'll see this live in your own terminal.</sub>
+<sub>📟 Live preview below — or run <code>toktop --demo</code> to watch the dollars tick and the budget bar go red in your own terminal.</sub>
 
 </div>
 
