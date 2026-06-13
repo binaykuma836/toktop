@@ -1,0 +1,49 @@
+# GoReleaser config — https://goreleaser.com
+# Builds single static binaries for macOS/Linux/Windows, publishes a GitHub
+# release with checksums, and updates a Homebrew tap.
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+    - go test ./...
+
+builds:
+  - id: toktop
+    main: .
+    binary: toktop
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X main.version={{ .Version }}
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+
+archives:
+  - id: default
+    name_template: "toktop_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+      - Merge pull request
+
+# Homebrew: once you've created a furkanalp41/homebrew-tap repo and a
+# HOMEBREW_TAP_TOKEN secret, add a `homebrew_casks:` block here to auto-publish
+# the formula. See https://goreleaser.com/customization/homebrew_casks/
+
+release:
+  prerelease: auto
+  footer: |
+    ---
+    Made for people who got surprised by their Claude Code bill once.

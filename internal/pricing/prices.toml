@@ -1,0 +1,120 @@
+# toktop default pricing table
+# ---------------------------------------------------------------------------
+# All prices are in USD per 1,000,000 (one million) tokens.
+#
+# Matching: the model id reported in your agent logs is lower-cased and matched
+# against the `match` substrings below. The LONGEST matching substring wins, so
+# you can add specific overrides without removing the general ones.
+#
+# Optional per-class overrides (defaults are derived from `input`):
+#   cache_read       -> defaults to input * 0.10   (cache hits are 10% of input)
+#   cache_write_5m   -> defaults to input * 1.25   (5-minute cache writes)
+#   cache_write_1h   -> defaults to input * 2.00   (1-hour cache writes)
+#
+# Drop a copy of this file at ~/.config/toktop/pricing.toml (or set
+# $TOKTOP_PRICING) to override any of these without waiting for a release.
+#
+# Anthropic rates verified against https://platform.claude.com/docs/.../pricing
+# (2026-06-13). OpenAI / Google rates are best-effort for the experimental
+# agents — please verify against the provider and send a PR if they drift.
+# ---------------------------------------------------------------------------
+
+# ---- Anthropic / Claude (first-class, verified against real logs) ----
+[[model]]
+match  = ["opus"]
+input  = 5.0
+output = 25.0
+
+[[model]]
+match  = ["sonnet"]
+input  = 3.0
+output = 15.0
+
+[[model]]
+match  = ["haiku"]
+input  = 1.0
+output = 5.0
+
+# Claude Fable 5 — flagship (priced at 2x Opus).
+[[model]]
+match  = ["fable", "mythos"]
+input  = 10.0
+output = 50.0
+
+# ---- OpenAI / Codex (experimental — verify before trusting) ----
+[[model]]
+match  = ["gpt-5.5"]
+input  = 5.0
+output = 30.0
+
+[[model]]
+match  = ["gpt-5.4-mini"]
+input  = 0.75
+output = 4.5
+
+[[model]]
+match  = ["gpt-5.4-nano"]
+input  = 0.20
+output = 1.25
+
+[[model]]
+match  = ["gpt-5.4"]
+input  = 2.5
+output = 15.0
+
+[[model]]
+match  = ["gpt-5.3-codex"]
+input  = 1.75
+output = 14.0
+
+[[model]]
+match  = ["codex", "gpt-5-codex"]
+input  = 1.25
+output = 10.0
+
+[[model]]
+match  = ["gpt-5-mini"]
+input  = 0.25
+output = 2.0
+
+[[model]]
+match  = ["gpt-5-nano"]
+input  = 0.05
+output = 0.4
+
+[[model]]
+match  = ["gpt-5", "gpt5"]
+input  = 1.25
+output = 10.0
+
+[[model]]
+match  = ["o3", "o4"]
+input  = 2.0
+output = 8.0
+
+# ---- Google / Gemini (experimental — verify before trusting) ----
+[[model]]
+match  = ["gemini-3-pro", "gemini-3.1-pro"]
+input  = 2.0
+output = 12.0
+
+[[model]]
+match  = ["gemini-2.5-pro", "gemini-pro"]
+input  = 1.25
+output = 10.0
+
+[[model]]
+match  = ["flash-lite"]
+input  = 0.10
+output = 0.40
+
+[[model]]
+match  = ["flash"]
+input  = 0.30
+output = 2.5
+
+# ---- Fallback for any unmatched model (cost is flagged as estimated) ----
+[default]
+match  = ["default"]
+input  = 3.0
+output = 15.0
