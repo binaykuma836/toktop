@@ -4,7 +4,7 @@ import "testing"
 
 func TestParseClaudeLine(t *testing.T) {
 	c := NewClaudeSource()
-	line := []byte(`{"type":"assistant","timestamp":"2026-06-09T16:20:02.654Z","cwd":"/home/vlad/proj","sessionId":"sess1","requestId":"req1","uuid":"u1","message":{"id":"msg1","model":"claude-opus-4-8","usage":{"input_tokens":100,"output_tokens":200,"cache_read_input_tokens":50,"cache_creation_input_tokens":40,"cache_creation":{"ephemeral_5m_input_tokens":10,"ephemeral_1h_input_tokens":30}}}}`)
+	line := []byte(`{"type":"assistant","timestamp":"2026-06-09T16:20:02.654Z","cwd":"/home/user/proj","sessionId":"sess1","requestId":"req1","uuid":"u1","message":{"id":"msg1","model":"claude-opus-4-8","usage":{"input_tokens":100,"output_tokens":200,"cache_read_input_tokens":50,"cache_creation_input_tokens":40,"cache_creation":{"ephemeral_5m_input_tokens":10,"ephemeral_1h_input_tokens":30}}}}`)
 	e, ok := c.ParseLine(line)
 	if !ok {
 		t.Fatal("expected the line to parse")
